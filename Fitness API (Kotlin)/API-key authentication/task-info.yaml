@@ -1,0 +1,26 @@
+type: edu
+files:
+  - name: src/fitnesstracker/Application.kt
+    visible: true
+    learner_created: false
+  - name: src/resources/application.properties
+    visible: true
+    learner_created: false
+  - name: build.gradle
+    visible: true
+    learner_created: false
+  - name: test/AppProfile.java
+    visible: false
+    learner_created: false
+  - name: test/DataRecord.java
+    visible: false
+    learner_created: false
+  - name: test/DevProfile.java
+    visible: false
+    learner_created: false
+  - name: test/FitnessTrackerTest.java
+    visible: false
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/40046#comment
+status: Unchecked
+record: -1
