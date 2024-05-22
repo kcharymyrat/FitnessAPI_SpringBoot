@@ -1,8 +1,6 @@
 package fitnesstracker.controller
 
 import fitnesstracker.dto.FitnessTrackerRequestDTO
-import fitnesstracker.dto.FitnessTrackerResponseDTO
-import fitnesstracker.model.FitnessTracker
 import fitnesstracker.service.FitnessTrackerService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
@@ -13,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class TrackerController @Autowired constructor(
+class TrackerRestController @Autowired constructor(
     private val fitnessTrackerService: FitnessTrackerService
 ) {
 
