@@ -15,12 +15,27 @@ files:
   - name: build.gradle
     visible: true
     learner_created: false
+  - name: src/fitnesstracker/dto/FitnessTrackerRequestDTO.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/controller/TrackerController.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/model/FitnessTracker.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/dao/FitnessTrackerRepository.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/service/FitnessTrackerService.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/dto/FitnessTrackerResponseDTO.kt
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/40043#comment
-status: Failed
+status: Solved
 feedback:
-  message: |-
-    Wrong answer in test #1
-
-    POST /api/tracker should respond with status code 201, responded with 404
-  time: "Wed, 22 May 2024 05:24:42 UTC"
+  message: Congratulations!
+  time: "Wed, 22 May 2024 07:41:09 UTC"
 record: -1

@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">1</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">7.582s</div>
+<div class="counter">22.047s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">0%</div>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,75 +61,13 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Failed tests</a>
+<a href="#tab0">Tests</a>
 </li>
 <li>
-<a href="#tab1">Tests</a>
-</li>
-<li>
-<a href="#tab2">Standard output</a>
+<a href="#tab1">Standard output</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="start"></a>
-<h3 class="failures">start</h3>
-<span class="code">
-<pre>java.lang.AssertionError: Wrong answer in test #1
-
-POST /api/tracker should respond with status code 201, responded with 404
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.hyperskill.hstest.stage.StageTest.start(StageTest.java:203)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:108)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:57)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:39)
-	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:52)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at jdk.proxy1/jdk.proxy1.$Proxy2.processTestClass(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-</pre>
-</span>
-</div>
-</div>
-<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -140,13 +78,13 @@ POST /api/tracker should respond with status code 201, responded with 404
 </tr>
 </thead>
 <tr>
-<td class="failures">start</td>
-<td class="failures">7.582s</td>
-<td class="failures">failed</td>
+<td class="success">start</td>
+<td class="success">22.047s</td>
+<td class="success">passed</td>
 </tr>
 </table>
 </div>
-<div id="tab2" class="tab">
+<div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
 <pre>?[1;31m
@@ -160,33 +98,86 @@ Start test 1?[0m
 ?[0m?[0;34m =========|_|==============|___/=/_/_/_/
 ?[0m?[0;34m :: Spring Boot ::                (v3.0.2)
 ?[0m?[0;34m
-?[0m?[0;34m2024-05-22T10:24:35.482+05:00  INFO 11468 --- [    Test worker] fitnesstracker.ApplicationKt             : Starting ApplicationKt using Java 17.0.5 with PID 11468 (started by User in D:\JetBrainsWork\Fitness API (Kotlin)\Fitness API (Kotlin)\task)
-?[0m?[0;34m2024-05-22T10:24:35.488+05:00  INFO 11468 --- [    Test worker] fitnesstracker.ApplicationKt             : No active profile set, falling back to 1 default profile: &quot;default&quot;
-?[0m?[0;34m2024-05-22T10:24:37.074+05:00  INFO 11468 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-?[0m?[0;34m2024-05-22T10:24:37.113+05:00  INFO 11468 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 JPA repository interfaces.
-?[0m?[0;34m2024-05-22T10:24:37.951+05:00  INFO 11468 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-?[0m?[0;34m2024-05-22T10:24:37.971+05:00  INFO 11468 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-?[0m?[0;34m2024-05-22T10:24:37.972+05:00  INFO 11468 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
-?[0m?[0;34m2024-05-22T10:24:38.101+05:00  INFO 11468 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-?[0m?[0;34m2024-05-22T10:24:38.102+05:00  INFO 11468 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2531 ms
-?[0m?[0;34m2024-05-22T10:24:38.257+05:00  INFO 11468 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-?[0m?[0;34m2024-05-22T10:24:38.673+05:00  INFO 11468 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:../fitness_db user=SA
-?[0m?[0;34m2024-05-22T10:24:38.677+05:00  INFO 11468 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-?[0m?[0;34m2024-05-22T10:24:38.694+05:00  INFO 11468 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:../fitness_db'
-?[0m?[0;34m2024-05-22T10:24:38.940+05:00  INFO 11468 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-?[0m?[0;34m2024-05-22T10:24:39.024+05:00  INFO 11468 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
-?[0m?[0;34m2024-05-22T10:24:39.324+05:00  WARN 11468 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
-?[0m?[0;34m2024-05-22T10:24:39.598+05:00  INFO 11468 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-?[0m?[0;34m2024-05-22T10:24:40.025+05:00  INFO 11468 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-?[0m?[0;34m2024-05-22T10:24:40.044+05:00  INFO 11468 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-?[0m?[0;34m2024-05-22T10:24:40.105+05:00  WARN 11468 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-?[0m?[0;34m2024-05-22T10:24:40.923+05:00  INFO 11468 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-?[0m?[0;34m2024-05-22T10:24:41.043+05:00  INFO 11468 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-?[0m?[0;34m2024-05-22T10:24:41.109+05:00  INFO 11468 --- [    Test worker] fitnesstracker.ApplicationKt             : Started ApplicationKt in 6.276 seconds (process running for 7.728)
-?[0;34m2024-05-22T10:24:41.596+05:00  INFO 11468 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-?[0m?[0;34m2024-05-22T10:24:41.597+05:00  INFO 11468 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-?[0m?[0;34m2024-05-22T10:24:41.600+05:00  INFO 11468 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-?[0m</pre>
+?[0m?[0;34m2024-05-22T12:40:48.319+05:00  INFO 4352 --- [    Test worker] fitnesstracker.ApplicationKt             : Starting ApplicationKt using Java 17.0.5 with PID 4352 (started by User in D:\JetBrainsWork\Fitness API (Kotlin)\Fitness API (Kotlin)\task)
+?[0m?[0;34m2024-05-22T12:40:48.325+05:00  INFO 4352 --- [    Test worker] fitnesstracker.ApplicationKt             : No active profile set, falling back to 1 default profile: &quot;default&quot;
+?[0m?[0;34m2024-05-22T12:40:49.933+05:00  INFO 4352 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+?[0m?[0;34m2024-05-22T12:40:50.024+05:00  INFO 4352 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 1 JPA repository interfaces.
+?[0m?[0;34m2024-05-22T12:40:50.907+05:00  INFO 4352 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+?[0m?[0;34m2024-05-22T12:40:50.924+05:00  INFO 4352 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+?[0m?[0;34m2024-05-22T12:40:50.925+05:00  INFO 4352 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+?[0m?[0;34m2024-05-22T12:40:51.058+05:00  INFO 4352 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+?[0m?[0;34m2024-05-22T12:40:51.059+05:00  INFO 4352 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2661 ms
+?[0m?[0;34m2024-05-22T12:40:51.226+05:00  INFO 4352 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+?[0m?[0;34m2024-05-22T12:40:51.588+05:00  INFO 4352 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:../fitness_db user=SA
+?[0m?[0;34m2024-05-22T12:40:51.592+05:00  INFO 4352 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+?[0m?[0;34m2024-05-22T12:40:51.613+05:00  INFO 4352 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:../fitness_db'
+?[0m?[0;34m2024-05-22T12:40:51.892+05:00  INFO 4352 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+?[0m?[0;34m2024-05-22T12:40:51.969+05:00  INFO 4352 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+?[0m?[0;34m2024-05-22T12:40:52.270+05:00  WARN 4352 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+?[0m?[0;34m2024-05-22T12:40:52.540+05:00  INFO 4352 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+?[0m?[0;34m2024-05-22T12:40:53.475+05:00  INFO 4352 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+?[0m?[0;34m2024-05-22T12:40:53.495+05:00  INFO 4352 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+?[0m?[0;34m2024-05-22T12:40:55.005+05:00  WARN 4352 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+?[0m?[0;34m2024-05-22T12:40:55.760+05:00  INFO 4352 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+?[0m?[0;34m2024-05-22T12:40:55.872+05:00  INFO 4352 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+?[0m?[0;34m2024-05-22T12:40:55.896+05:00  INFO 4352 --- [    Test worker] fitnesstracker.ApplicationKt             : Started ApplicationKt in 8.167 seconds (process running for 9.369)
+?[0;34m2024-05-22T12:40:56.391+05:00  INFO 4352 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+?[0m?[0;34m2024-05-22T12:40:56.392+05:00  INFO 4352 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+?[0m?[0;34m2024-05-22T12:40:56.397+05:00  INFO 4352 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+?[0m?[0;34mtrackerRequestDTO = FitnessTrackerRequestDTO(username=user-1716363647380, activity=swimming, duration=533, calories=407)
+?[0m?[0;34msavedTracker = FitnessTracker(id=1, username=user-1716363647380, activity=swimming, duration=533, calories=407)
+?[0;34mtrackerRequestDTO = FitnessTrackerRequestDTO(username=user-1716363647386, activity=dancing, duration=1247, calories=503)
+?[0m?[0;34msavedTracker = FitnessTracker(id=2, username=user-1716363647386, activity=dancing, duration=1247, calories=503)
+?[0;34mtrackerRequestDTO = FitnessTrackerRequestDTO(username=user-1716363647387, activity=swimming, duration=1396, calories=532)
+?[0m?[0;34msavedTracker = FitnessTracker(id=3, username=user-1716363647387, activity=swimming, duration=1396, calories=532)
+?[0;34mtrackerRequestDTO = FitnessTrackerRequestDTO(username=user-1716363647387, activity=cycling, duration=1108, calories=394)
+?[0m?[0;34msavedTracker = FitnessTracker(id=4, username=user-1716363647387, activity=cycling, duration=1108, calories=394)
+?[0m?[1;31m
+Start test 2?[0m
+?[1;31m
+Start test 3?[0m
+?[0;34m2024-05-22T12:40:57.522+05:00  INFO 4352 --- [       Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+?[0m?[0;34m2024-05-22T12:40:57.525+05:00  INFO 4352 --- [       Thread-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+?[0m?[0;34m2024-05-22T12:40:57.536+05:00  INFO 4352 --- [       Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+?[0m?[0;34m2024-05-22T12:40:57.540+05:00  INFO 4352 --- [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+?[0m?[0;34m2024-05-22T12:40:57.646+05:00  INFO 4352 --- [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+?[0;34m
+?[0m?[0;34m  .   ____          _            __ _ _
+?[0m?[0;34m /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+?[0m?[0;34m( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+?[0m?[0;34m \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+?[0m?[0;34m  '  |____| .__|_| |_|_| |_\__, | / / / /
+?[0m?[0;34m =========|_|==============|___/=/_/_/_/
+?[0m?[0;34m :: Spring Boot ::                (v3.0.2)
+?[0m?[0;34m
+?[0m?[0;34m2024-05-22T12:41:08.023+05:00  INFO 4352 --- [    Test worker] fitnesstracker.ApplicationKt             : Starting ApplicationKt using Java 17.0.5 with PID 4352 (started by User in D:\JetBrainsWork\Fitness API (Kotlin)\Fitness API (Kotlin)\task)
+?[0m?[0;34m2024-05-22T12:41:08.024+05:00  INFO 4352 --- [    Test worker] fitnesstracker.ApplicationKt             : No active profile set, falling back to 1 default profile: &quot;default&quot;
+?[0m?[0;34m2024-05-22T12:41:08.489+05:00  INFO 4352 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+?[0m?[0;34m2024-05-22T12:41:08.503+05:00  INFO 4352 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 1 JPA repository interfaces.
+?[0m?[0;34m2024-05-22T12:41:08.627+05:00  INFO 4352 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+?[0m?[0;34m2024-05-22T12:41:08.629+05:00  INFO 4352 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+?[0m?[0;34m2024-05-22T12:41:08.631+05:00  INFO 4352 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+?[0m?[0;34m2024-05-22T12:41:08.666+05:00  INFO 4352 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+?[0m?[0;34m2024-05-22T12:41:08.666+05:00  INFO 4352 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 638 ms
+?[0m?[0;34m2024-05-22T12:41:08.720+05:00  INFO 4352 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+?[0m?[0;34m2024-05-22T12:41:08.758+05:00  INFO 4352 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:file:../fitness_db user=SA
+?[0m?[0;34m2024-05-22T12:41:08.760+05:00  INFO 4352 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+?[0m?[0;34m2024-05-22T12:41:08.763+05:00  INFO 4352 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:../fitness_db'
+?[0m?[0;34m2024-05-22T12:41:08.826+05:00  INFO 4352 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+?[0m?[0;34m2024-05-22T12:41:08.836+05:00  WARN 4352 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+?[0m?[0;34m2024-05-22T12:41:08.847+05:00  INFO 4352 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+?[0m?[0;34m2024-05-22T12:41:08.882+05:00  INFO 4352 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+?[0m?[0;34m2024-05-22T12:41:08.884+05:00  INFO 4352 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+?[0m?[0;34m2024-05-22T12:41:08.981+05:00  WARN 4352 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+?[0m?[0;34m2024-05-22T12:41:09.233+05:00  INFO 4352 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+?[0m?[0;34m2024-05-22T12:41:09.265+05:00  INFO 4352 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+?[0m?[0;34m2024-05-22T12:41:09.278+05:00  INFO 4352 --- [    Test worker] fitnesstracker.ApplicationKt             : Started ApplicationKt in 1.308 seconds (process running for 22.751)
+?[0m?[1;31m
+Start test 4?[0m
+?[0;34m2024-05-22T12:41:09.286+05:00  INFO 4352 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+?[0m?[0;34m2024-05-22T12:41:09.287+05:00  INFO 4352 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+?[0m?[0;34m2024-05-22T12:41:09.289+05:00  INFO 4352 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+</pre>
 </span>
 </div>
 </div>
@@ -197,7 +188,7 @@ Start test 1?[0m
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.6</a> at May 22, 2024, 10:24:42 AM</p>
+<a href="http://www.gradle.org">Gradle 7.6</a> at May 22, 2024, 12:41:09 PM</p>
 </div>
 </div>
 </body>
