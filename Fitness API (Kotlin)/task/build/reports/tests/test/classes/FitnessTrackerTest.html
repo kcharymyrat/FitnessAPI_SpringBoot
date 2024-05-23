@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">26.176s</div>
+<div class="counter">26.201s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,7 +79,7 @@
 </thead>
 <tr>
 <td class="success">start</td>
-<td class="success">26.176s</td>
+<td class="success">26.201s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -98,76 +98,98 @@ Start test 1?[0m
 ?[0m?[0;34m =========|_|==============|___/=/_/_/_/
 ?[0m?[0;34m :: Spring Boot ::                (v3.0.2)
 ?[0m?[0;34m
-?[0m?[0;34m2024-05-22T18:53:44.348+05:00  INFO 16824 --- [    Test worker] fitnesstracker.ApplicationKt             : Starting ApplicationKt using Java 17.0.5 with PID 16824 (started by User in D:\JetBrainsWork\Fitness API (Kotlin)\Fitness API (Kotlin)\task)
-?[0m?[0;34m2024-05-22T18:53:44.363+05:00  INFO 16824 --- [    Test worker] fitnesstracker.ApplicationKt             : No active profile set, falling back to 1 default profile: &quot;default&quot;
-?[0m?[0;34m2024-05-22T18:53:47.160+05:00  INFO 16824 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-?[0m?[0;34m2024-05-22T18:53:47.274+05:00  INFO 16824 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 100 ms. Found 2 JPA repository interfaces.
-?[0m?[0;34m2024-05-22T18:53:48.452+05:00  INFO 16824 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-?[0m?[0;34m2024-05-22T18:53:48.479+05:00  INFO 16824 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-?[0m?[0;34m2024-05-22T18:53:48.480+05:00  INFO 16824 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
-?[0m?[0;34m2024-05-22T18:53:48.624+05:00  INFO 16824 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-?[0m?[0;34m2024-05-22T18:53:48.625+05:00  INFO 16824 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4108 ms
-?[0m?[0;34m2024-05-22T18:53:48.846+05:00  INFO 16824 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-?[0m?[0;34m2024-05-22T18:53:49.198+05:00  INFO 16824 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:../fitness_db user=SA
-?[0m?[0;34m2024-05-22T18:53:49.201+05:00  INFO 16824 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-?[0m?[0;34m2024-05-22T18:53:49.224+05:00  INFO 16824 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:../fitness_db'
-?[0m?[0;34m2024-05-22T18:53:49.522+05:00  INFO 16824 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-?[0m?[0;34m2024-05-22T18:53:49.634+05:00  INFO 16824 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
-?[0m?[0;34m2024-05-22T18:53:49.955+05:00  WARN 16824 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
-?[0m?[0;34m2024-05-22T18:53:50.190+05:00  INFO 16824 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-?[0m?[0;34m2024-05-22T18:53:51.562+05:00  INFO 16824 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-?[0m?[0;34m2024-05-22T18:53:51.580+05:00  INFO 16824 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-?[0m?[0;34m2024-05-22T18:53:52.766+05:00  WARN 16824 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-?[0m?[0;34m2024-05-22T18:53:53.501+05:00  INFO 16824 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-?[0m?[0;34m2024-05-22T18:53:53.611+05:00  INFO 16824 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@37e7e089, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@58f05266, org.springframework.security.web.context.SecurityContextHolderFilter@2b6d9650, org.springframework.security.web.header.HeaderWriterFilter@61c946a0, org.springframework.security.web.authentication.logout.LogoutFilter@4ca83ec3, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@209ab1d7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@41a6cd9e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6915b614, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2b3ac26d, org.springframework.security.web.session.SessionManagementFilter@7e7ee3b7, org.springframework.security.web.access.ExceptionTranslationFilter@7aa44fa2, org.springframework.security.web.access.intercept.AuthorizationFilter@1a5ea4cf]
-?[0m?[0;34m2024-05-22T18:53:54.140+05:00  INFO 16824 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-?[0m?[0;34m2024-05-22T18:53:54.165+05:00  INFO 16824 --- [    Test worker] fitnesstracker.ApplicationKt             : Started ApplicationKt in 10.612 seconds (process running for 12.195)
-?[0;34m2024-05-22T18:53:54.642+05:00  INFO 16824 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-?[0m?[0;34m2024-05-22T18:53:54.643+05:00  INFO 16824 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-?[0m?[0;34m2024-05-22T18:53:54.648+05:00  INFO 16824 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+?[0m?[0;34m2024-05-23T11:46:39.698+05:00  INFO 15432 --- [    Test worker] fitnesstracker.ApplicationKt             : Starting ApplicationKt using Java 17.0.5 with PID 15432 (started by User in D:\JetBrainsWork\Fitness API (Kotlin)\Fitness API (Kotlin)\task)
+?[0m?[0;34m2024-05-23T11:46:39.703+05:00  INFO 15432 --- [    Test worker] fitnesstracker.ApplicationKt             : No active profile set, falling back to 1 default profile: &quot;default&quot;
+?[0m?[0;34m2024-05-23T11:46:42.049+05:00  INFO 15432 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+?[0m?[0;34m2024-05-23T11:46:42.150+05:00  INFO 15432 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 86 ms. Found 2 JPA repository interfaces.
+?[0m?[0;34m2024-05-23T11:46:43.270+05:00  INFO 15432 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+?[0m?[0;34m2024-05-23T11:46:43.296+05:00  INFO 15432 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+?[0m?[0;34m2024-05-23T11:46:43.298+05:00  INFO 15432 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+?[0m?[0;34m2024-05-23T11:46:43.445+05:00  INFO 15432 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+?[0m?[0;34m2024-05-23T11:46:43.446+05:00  INFO 15432 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3645 ms
+?[0m?[0;34m2024-05-23T11:46:43.646+05:00  INFO 15432 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+?[0m?[0;34m2024-05-23T11:46:44.049+05:00  INFO 15432 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:../fitness_db user=SA
+?[0m?[0;34m2024-05-23T11:46:44.053+05:00  INFO 15432 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+?[0m?[0;34m2024-05-23T11:46:44.075+05:00  INFO 15432 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:../fitness_db'
+?[0m?[0;34m2024-05-23T11:46:44.412+05:00  INFO 15432 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+?[0m?[0;34m2024-05-23T11:46:44.515+05:00  INFO 15432 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+?[0m?[0;34m2024-05-23T11:46:44.851+05:00  WARN 15432 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+?[0m?[0;34m2024-05-23T11:46:45.157+05:00  INFO 15432 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+?[0m?[0;34m2024-05-23T11:46:46.393+05:00  INFO 15432 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+?[0m?[0;34m2024-05-23T11:46:46.410+05:00  INFO 15432 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+?[0m?[0;34m2024-05-23T11:46:47.676+05:00  WARN 15432 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+?[0m?[0;34m2024-05-23T11:46:48.442+05:00  INFO 15432 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+?[0m?[0;34m2024-05-23T11:46:48.553+05:00  INFO 15432 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4620e669, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b93a232, org.springframework.security.web.context.SecurityContextHolderFilter@7c98bac0, org.springframework.security.web.header.HeaderWriterFilter@33d75081, org.springframework.security.web.authentication.logout.LogoutFilter@77227b1f, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@23a0c7f3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6fc9c0cc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@21a09c5a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6c6fdf5d, org.springframework.security.web.session.SessionManagementFilter@269a37bc, org.springframework.security.web.access.ExceptionTranslationFilter@3ca43e5d, org.springframework.security.web.access.intercept.AuthorizationFilter@616d9a6d]
+?[0m?[0;34m2024-05-23T11:46:49.077+05:00  INFO 15432 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+?[0m?[0;34m2024-05-23T11:46:49.098+05:00  INFO 15432 --- [    Test worker] fitnesstracker.ApplicationKt             : Started ApplicationKt in 10.139 seconds (process running for 11.376)
+?[0;34m2024-05-23T11:46:49.607+05:00  INFO 15432 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+?[0m?[0;34m2024-05-23T11:46:49.608+05:00  INFO 15432 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+?[0m?[0;34m2024-05-23T11:46:49.611+05:00  INFO 15432 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
 ?[0m?[0;34mdeveloperRequestDTO = DeveloperSignupDTO(email=alice@gmail.com, password=qwerty)
 ?[0m?[1;31m
 Start test 2?[0m
 ?[0;34mdeveloperRequestDTO = DeveloperSignupDTO(email=bob@example.net, password=12345)
 ?[1;31m
 Start test 3?[0m
-?[0;34mdeveloperRequestDTO = DeveloperSignupDTO(email=null, password=1716386035414)
+?[0;34mdeveloperRequestDTO = DeveloperSignupDTO(email=null, password=1716446810465)
 ?[1;31m
 Start test 4?[0m
-?[0;34mdeveloperRequestDTO = DeveloperSignupDTO(email=, password=1716386035433)
+?[0;34mdeveloperRequestDTO = DeveloperSignupDTO(email=, password=1716446810480)
 ?[1;31m
 Start test 5?[0m
-?[0;34mdeveloperRequestDTO = DeveloperSignupDTO(email=email, password=1716386035449)
+?[0;34mdeveloperRequestDTO = DeveloperSignupDTO(email=email, password=1716446810494)
 ?[1;31m
 Start test 6?[0m
-?[0;34mdeveloperRequestDTO = DeveloperSignupDTO(email=user-1716386035463, password=null)
+?[0;34mdeveloperRequestDTO = DeveloperSignupDTO(email=user-1716446810509, password=null)
 ?[1;31m
 Start test 7?[0m
-?[0;34mdeveloperRequestDTO = DeveloperSignupDTO(email=user-1716386035478, password=)
+?[0;34mdeveloperRequestDTO = DeveloperSignupDTO(email=user-1716446810526, password=)
 ?[1;31m
 Start test 8?[0m
 ?[0;34mdeveloperRequestDTO = DeveloperSignupDTO(email=alice@gmail.com, password=qwerty)
 ?[1;31m
 Start test 9?[0m
-?[0;34mtrackerRequestDTO = FitnessTrackerRequestDTO(username=user-1716386023062, activity=running, duration=152, calories=586)
-?[0m?[0;34msavedTracker = FitnessTracker(id=1, username=user-1716386023062, activity=running, duration=152, calories=586)
-?[0m?[0;34mtrackerRequestDTO = FitnessTrackerRequestDTO(username=user-1716386023066, activity=swimming, duration=2432, calories=111)
-?[0m?[0;34msavedTracker = FitnessTracker(id=2, username=user-1716386023066, activity=swimming, duration=2432, calories=111)
-?[0m?[0;34mtrackerRequestDTO = FitnessTrackerRequestDTO(username=user-1716386023066, activity=walking, duration=1875, calories=224)
-?[0m?[0;34msavedTracker = FitnessTracker(id=3, username=user-1716386023066, activity=walking, duration=1875, calories=224)
-?[0m?[0;34mtrackerRequestDTO = FitnessTrackerRequestDTO(username=user-1716386023066, activity=walking, duration=1315, calories=124)
-?[0m?[0;34msavedTracker = FitnessTracker(id=4, username=user-1716386023066, activity=walking, duration=1315, calories=124)
+?[0;34mtrackerRequestDTO = FitnessTrackerRequestDTO(username=user-1716446798578, activity=swimming, duration=540, calories=468)
+?[0m?[0;34msavedTracker = FitnessTracker(id=1, username=user-1716446798578, activity=swimming, duration=540, calories=468)
+?[0;34mtrackerRequestDTO = FitnessTrackerRequestDTO(username=user-1716446798583, activity=cycling, duration=2672, calories=292)
+?[0m?[0;34msavedTracker = FitnessTracker(id=2, username=user-1716446798583, activity=cycling, duration=2672, calories=292)
+?[0m?[0;34mtrackerRequestDTO = FitnessTrackerRequestDTO(username=user-1716446798584, activity=dancing, duration=74, calories=286)
+?[0m?[0;34msavedTracker = FitnessTracker(id=3, username=user-1716446798584, activity=dancing, duration=74, calories=286)
+?[0m?[0;34mtrackerRequestDTO = FitnessTrackerRequestDTO(username=user-1716446798584, activity=swimming, duration=2507, calories=369)
+?[0m?[0;34msavedTracker = FitnessTracker(id=4, username=user-1716446798584, activity=swimming, duration=2507, calories=369)
 ?[1;31m
 Start test 10?[0m
 ?[1;31m
 Start test 11?[0m
+?[0m?[0;34mappRegisterDTO = AppRegisterRequestDTO(name=Demo App 1, description=In sit amet posuere magna. Cras cursus tincidunt.)
+?[0m?[0;34moptionalAppResponseDTP = Optional[AppRegisterResponseDTO(name=Demo App 1, apikey=03bf06a0-c7be-497c-be32-ebbf9ac297f7)]
 ?[1;31m
 Start test 12?[0m
-?[0;34m2024-05-22T18:53:56.975+05:00  INFO 16824 --- [       Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-?[0m?[0;34m2024-05-22T18:53:56.978+05:00  INFO 16824 --- [       Thread-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
-?[0m?[0;34m2024-05-22T18:53:56.994+05:00  INFO 16824 --- [       Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-?[0m?[0;34m2024-05-22T18:53:56.998+05:00  INFO 16824 --- [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-?[0m?[0;34m2024-05-22T18:53:57.166+05:00  INFO 16824 --- [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+?[0m?[0;34mappRegisterDTO = AppRegisterRequestDTO(name=Demo App 2, description=)
+?[0m?[0;34moptionalAppResponseDTP = Optional[AppRegisterResponseDTO(name=Demo App 2, apikey=e2be9f85-b743-49fb-87c5-7d9ff6765422)]
+?[1;31m
+Start test 13?[0m
+?[0m?[0;34mappRegisterDTO = AppRegisterRequestDTO(name=Demo App 1, description=In sit amet posuere magna. Cras cursus tincidunt.)
+?[0m?[0;34moptionalAppResponseDTP = Optional.empty
+?[1;31m
+Start test 14?[0m
+?[0m?[0;34m2024-05-23T11:46:51.400+05:00  WARN 15432 --- [nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `fitnesstracker.dto.AppRegisterRequestDTO`, problem: Parameter specified as non-null is null: method fitnesstracker.dto.AppRegisterRequestDTO.&lt;init&gt;, parameter name]
+?[1;31m
+Start test 15?[0m
+?[0m?[0;34mappRegisterDTO = AppRegisterRequestDTO(name= , description=In sit amet posuere magna. Cras cursus tincidunt.)
+?[0m?[0;34moptionalAppResponseDTP = Optional.empty
+?[1;31m
+Start test 16?[0m
+?[0m?[0;34m2024-05-23T11:46:51.615+05:00  WARN 15432 --- [nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `fitnesstracker.dto.AppRegisterRequestDTO`, problem: Parameter specified as non-null is null: method fitnesstracker.dto.AppRegisterRequestDTO.&lt;init&gt;, parameter description]
+?[1;31m
+Start test 17?[0m
+?[1;31m
+Start test 18?[0m
+?[0;34m2024-05-23T11:46:52.543+05:00  INFO 15432 --- [       Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+?[0m?[0;34m2024-05-23T11:46:52.546+05:00  INFO 15432 --- [       Thread-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+?[0m?[0;34m2024-05-23T11:46:52.559+05:00  INFO 15432 --- [       Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+?[0m?[0;34m2024-05-23T11:46:52.564+05:00  INFO 15432 --- [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+?[0m?[0;34m2024-05-23T11:46:52.671+05:00  INFO 15432 --- [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
 ?[0;34m
 ?[0m?[0;34m  .   ____          _            __ _ _
 ?[0m?[0;34m /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -177,34 +199,34 @@ Start test 12?[0m
 ?[0m?[0;34m =========|_|==============|___/=/_/_/_/
 ?[0m?[0;34m :: Spring Boot ::                (v3.0.2)
 ?[0m?[0;34m
-?[0m?[0;34m2024-05-22T18:54:07.468+05:00  INFO 16824 --- [    Test worker] fitnesstracker.ApplicationKt             : Starting ApplicationKt using Java 17.0.5 with PID 16824 (started by User in D:\JetBrainsWork\Fitness API (Kotlin)\Fitness API (Kotlin)\task)
-?[0m?[0;34m2024-05-22T18:54:07.469+05:00  INFO 16824 --- [    Test worker] fitnesstracker.ApplicationKt             : No active profile set, falling back to 1 default profile: &quot;default&quot;
-?[0m?[0;34m2024-05-22T18:54:08.041+05:00  INFO 16824 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-?[0m?[0;34m2024-05-22T18:54:08.060+05:00  INFO 16824 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 2 JPA repository interfaces.
-?[0m?[0;34m2024-05-22T18:54:08.203+05:00  INFO 16824 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-?[0m?[0;34m2024-05-22T18:54:08.204+05:00  INFO 16824 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-?[0m?[0;34m2024-05-22T18:54:08.204+05:00  INFO 16824 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
-?[0m?[0;34m2024-05-22T18:54:08.241+05:00  INFO 16824 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-?[0m?[0;34m2024-05-22T18:54:08.242+05:00  INFO 16824 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 766 ms
-?[0m?[0;34m2024-05-22T18:54:08.322+05:00  INFO 16824 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-?[0m?[0;34m2024-05-22T18:54:08.358+05:00  INFO 16824 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:file:../fitness_db user=SA
-?[0m?[0;34m2024-05-22T18:54:08.360+05:00  INFO 16824 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-?[0m?[0;34m2024-05-22T18:54:08.364+05:00  INFO 16824 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:../fitness_db'
-?[0m?[0;34m2024-05-22T18:54:08.456+05:00  INFO 16824 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-?[0m?[0;34m2024-05-22T18:54:08.464+05:00  WARN 16824 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
-?[0m?[0;34m2024-05-22T18:54:08.472+05:00  INFO 16824 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-?[0m?[0;34m2024-05-22T18:54:08.500+05:00  INFO 16824 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-?[0m?[0;34m2024-05-22T18:54:08.501+05:00  INFO 16824 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-?[0m?[0;34m2024-05-22T18:54:08.624+05:00  WARN 16824 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-?[0m?[0;34m2024-05-22T18:54:08.833+05:00  INFO 16824 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-?[0m?[0;34m2024-05-22T18:54:08.879+05:00  INFO 16824 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3c964873, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7db72209, org.springframework.security.web.context.SecurityContextHolderFilter@5d9ccad2, org.springframework.security.web.header.HeaderWriterFilter@785aeba9, org.springframework.security.web.authentication.logout.LogoutFilter@61ce2d47, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@184b3575, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@22fb60f3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@dd3d0a6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c7e2c5, org.springframework.security.web.session.SessionManagementFilter@1bd98c48, org.springframework.security.web.access.ExceptionTranslationFilter@549561ab, org.springframework.security.web.access.intercept.AuthorizationFilter@2ca2fcb5]
-?[0m?[0;34m2024-05-22T18:54:09.070+05:00  INFO 16824 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-?[0m?[0;34m2024-05-22T18:54:09.081+05:00  INFO 16824 --- [    Test worker] fitnesstracker.ApplicationKt             : Started ApplicationKt in 1.671 seconds (process running for 27.112)
+?[0m?[0;34m2024-05-23T11:47:03.044+05:00  INFO 15432 --- [    Test worker] fitnesstracker.ApplicationKt             : Starting ApplicationKt using Java 17.0.5 with PID 15432 (started by User in D:\JetBrainsWork\Fitness API (Kotlin)\Fitness API (Kotlin)\task)
+?[0m?[0;34m2024-05-23T11:47:03.047+05:00  INFO 15432 --- [    Test worker] fitnesstracker.ApplicationKt             : No active profile set, falling back to 1 default profile: &quot;default&quot;
+?[0m?[0;34m2024-05-23T11:47:03.545+05:00  INFO 15432 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+?[0m?[0;34m2024-05-23T11:47:03.567+05:00  INFO 15432 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 2 JPA repository interfaces.
+?[0m?[0;34m2024-05-23T11:47:03.730+05:00  INFO 15432 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+?[0m?[0;34m2024-05-23T11:47:03.736+05:00  INFO 15432 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+?[0m?[0;34m2024-05-23T11:47:03.736+05:00  INFO 15432 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+?[0m?[0;34m2024-05-23T11:47:03.785+05:00  INFO 15432 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+?[0m?[0;34m2024-05-23T11:47:03.786+05:00  INFO 15432 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 734 ms
+?[0m?[0;34m2024-05-23T11:47:03.849+05:00  INFO 15432 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+?[0m?[0;34m2024-05-23T11:47:03.872+05:00  INFO 15432 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:file:../fitness_db user=SA
+?[0m?[0;34m2024-05-23T11:47:03.872+05:00  INFO 15432 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+?[0m?[0;34m2024-05-23T11:47:03.872+05:00  INFO 15432 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:../fitness_db'
+?[0m?[0;34m2024-05-23T11:47:03.945+05:00  INFO 15432 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+?[0m?[0;34m2024-05-23T11:47:03.953+05:00  WARN 15432 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+?[0m?[0;34m2024-05-23T11:47:03.960+05:00  INFO 15432 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+?[0m?[0;34m2024-05-23T11:47:04.027+05:00  INFO 15432 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+?[0m?[0;34m2024-05-23T11:47:04.028+05:00  INFO 15432 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+?[0m?[0;34m2024-05-23T11:47:04.140+05:00  WARN 15432 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+?[0m?[0;34m2024-05-23T11:47:04.361+05:00  INFO 15432 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+?[0m?[0;34m2024-05-23T11:47:04.393+05:00  INFO 15432 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1ae11dd3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@79ae2d13, org.springframework.security.web.context.SecurityContextHolderFilter@192800d, org.springframework.security.web.header.HeaderWriterFilter@419fc1d6, org.springframework.security.web.authentication.logout.LogoutFilter@7cc7769d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@63100783, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@52f9a620, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6d575cd8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ce87f9d, org.springframework.security.web.session.SessionManagementFilter@46c85b61, org.springframework.security.web.access.ExceptionTranslationFilter@370c9681, org.springframework.security.web.access.intercept.AuthorizationFilter@5d55eb7a]
+?[0m?[0;34m2024-05-23T11:47:04.571+05:00  INFO 15432 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+?[0m?[0;34m2024-05-23T11:47:04.583+05:00  INFO 15432 --- [    Test worker] fitnesstracker.ApplicationKt             : Started ApplicationKt in 1.597 seconds (process running for 26.862)
 ?[0m?[1;31m
-Start test 13?[0m
-?[0;34m2024-05-22T18:54:09.095+05:00  INFO 16824 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-?[0m?[0;34m2024-05-22T18:54:09.095+05:00  INFO 16824 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-?[0m?[0;34m2024-05-22T18:54:09.098+05:00  INFO 16824 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+Start test 19?[0m
+?[0;34m2024-05-23T11:47:04.595+05:00  INFO 15432 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+?[0m?[0;34m2024-05-23T11:47:04.596+05:00  INFO 15432 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+?[0m?[0;34m2024-05-23T11:47:04.598+05:00  INFO 15432 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 </pre>
 </span>
 </div>
@@ -216,7 +238,7 @@ Start test 13?[0m
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.6</a> at May 22, 2024, 6:54:09 PM</p>
+<a href="http://www.gradle.org">Gradle 7.6</a> at May 23, 2024, 11:47:05 AM</p>
 </div>
 </div>
 </body>

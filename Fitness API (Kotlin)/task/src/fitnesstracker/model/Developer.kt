@@ -12,5 +12,18 @@ data class Developer(
     var email: String? = null,
 
     @Column(nullable = false)
-    var password: String? = null
-)
+    var password: String? = null,
+
+    @OneToMany(mappedBy = "developer", fetch = FetchType.EAGER, cascade = [CascadeType.ALL])
+    var apps: MutableSet<App> = emptySet<App>().toMutableSet()
+) {
+    override fun hashCode(): Int {
+        return id.hashCode()
+    }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is Developer) return false
+        return id == other.id
+    }
+}

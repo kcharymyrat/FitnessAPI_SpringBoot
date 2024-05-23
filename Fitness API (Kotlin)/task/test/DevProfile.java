@@ -1,12 +1,16 @@
+import java.util.List;
+
 class DevProfile {
     private Object id;
     private String email;
     private String password;
+    private List<AppProfile> applications;
 
     DevProfile(String email, String password) {
         this.id = null;
         this.email = email;
         this.password = password;
+        this.applications = null;
     }
 
     public Object getId() {
@@ -33,6 +37,14 @@ class DevProfile {
     public DevProfile setPassword(String password) {
         this.password = password;
         return this;
+    }
+
+    public List<AppProfile> getApplications() {
+        return applications;
+    }
+
+    public void setApplications(List<AppProfile> applications) {
+        this.applications = applications;
     }
 }
 

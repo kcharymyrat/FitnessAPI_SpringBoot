@@ -1,15 +1,18 @@
 package fitnesstracker.service;
 
 import fitnesstracker.dao.DeveloperRepository
+import fitnesstracker.dto.DeveloperApplication
 import fitnesstracker.dto.DeveloperResponseDTO
 import fitnesstracker.dto.DeveloperSignupDTO
 import fitnesstracker.model.Developer
 import fitnesstracker.security.UserDetailsImpl;
+import jakarta.transaction.Transactional
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service;
 import java.net.URI
+import java.util.*
 
 @Service
 class DeveloperService @Autowired constructor(
@@ -17,6 +20,9 @@ class DeveloperService @Autowired constructor(
         private val encoder: PasswordEncoder
 ) {
 
+    fun findById(id: Long): Optional<Developer> {
+        return developerRepository.findById(id)
+    }
 
 
     fun getAllDeveloperResponseDTOs(): List<DeveloperResponseDTO> {
@@ -76,12 +82,19 @@ class DeveloperService @Autowired constructor(
 
     fun getDeveloperResponseDTO(id : Long): DeveloperResponseDTO? {
         val optionalDeveloper = developerRepository.findById(id)
-
         if (optionalDeveloper.isPresent) {
             val developer = optionalDeveloper.get()
-            return DeveloperResponseDTO(developer.id, developer.email)
+            val devApps = developer.apps.map {
+                DeveloperApplication(it.id ?: "", it.name, it.description, it.apiKey)
+            }
+            return DeveloperResponseDTO(developer.id, developer.email, devApps)
         }
         return null
+    }
+
+    @Transactional
+    fun updateDeveloper(developer: Developer) {
+        developerRepository.save(developer)
     }
 
 

@@ -6,6 +6,7 @@ import org.hyperskill.hstest.mocks.web.response.HttpResponse;
 import org.hyperskill.hstest.stage.SpringTest;
 import org.hyperskill.hstest.testcase.CheckResult;
 
+import java.util.ArrayList;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
@@ -13,15 +14,19 @@ import static org.hyperskill.hstest.testing.expect.Expectation.expect;
 import static org.hyperskill.hstest.testing.expect.json.JsonChecker.any;
 import static org.hyperskill.hstest.testing.expect.json.JsonChecker.isArray;
 import static org.hyperskill.hstest.testing.expect.json.JsonChecker.isObject;
+import static org.hyperskill.hstest.testing.expect.json.JsonChecker.isString;
 
 public class FitnessTrackerTest extends SpringTest {
     private final Gson gson = new Gson();
     private final String trackerUrl = "/api/tracker";
     private final String signupUrl = "/api/developers/signup";
-
+    private final String registerUrl = "/api/applications/register";
     private final DevProfile alice = DevProfileMother.alice();
     private final DevProfile aliceCopy = DevProfileMother.alice();
     private final DevProfile bob = DevProfileMother.bob();
+    private final AppProfile demo1 = AppProfileMother.demo1();
+    private final AppProfile demo1Copy = AppProfileMother.demo1();
+    private final AppProfile demo2 = AppProfileMother.demo2();
 
     public FitnessTrackerTest() {
         super("../fitness_db.mv.db");
@@ -64,6 +69,36 @@ public class FitnessTrackerTest extends SpringTest {
 
     CheckResult testRegisterInvalidDev(DevProfile devProfile) {
         HttpResponse response = post(signupUrl, gson.toJson(devProfile)).send();
+
+        checkStatusCode(response, 400);
+
+        return CheckResult.correct();
+    }
+
+    CheckResult testRegisterApp(DevProfile devProfile,
+                                AppProfile appProfile) {
+        HttpResponse response = post(registerUrl, gson.toJson(appProfile))
+                .basicAuth(devProfile.getEmail(), devProfile.getPassword())
+                .send();
+
+        checkStatusCode(response, 201);
+        checkAppRegistrationResponseJson(response, appProfile);
+
+        var apikey = response.getJson().getAsJsonObject().get("apikey").getAsString();
+        appProfile.setApikey(apikey);
+        if (devProfile.getApplications() == null) {
+            devProfile.setApplications(new ArrayList<>());
+        }
+        devProfile.getApplications().add(appProfile);
+
+        return CheckResult.correct();
+    }
+
+    CheckResult testRegisterInvalidApp(DevProfile devProfile,
+                                       AppProfile appProfile) {
+        HttpResponse response = post(registerUrl, gson.toJson(appProfile))
+                .basicAuth(devProfile.getEmail(), devProfile.getPassword())
+                .send();
 
         checkStatusCode(response, 400);
 
@@ -147,10 +182,34 @@ public class FitnessTrackerTest extends SpringTest {
     }
 
     private void checkProfileJson(HttpResponse response, DevProfile expectedData) {
+        var applications = expectedData.getApplications();
+
         expect(response.getContent()).asJson().check(
                 isObject()
                         .value("id", any())
                         .value("email", Pattern.compile(expectedData.getEmail(), Pattern.CASE_INSENSITIVE))
+                        .value("applications", isArray(expectedData.getApplications().size())
+                                .item(isObject()
+                                        .value("id", any())
+                                        .value("name", applications.get(1).getName())
+                                        .value("description", applications.get(1).getDescription())
+                                        .value("apikey", applications.get(1).getApikey())
+                                )
+                                .item(isObject()
+                                        .value("id", any())
+                                        .value("name", applications.get(0).getName())
+                                        .value("description", applications.get(0).getDescription())
+                                        .value("apikey", applications.get(0).getApikey())
+                                )
+                        )
+        );
+    }
+
+    private void checkAppRegistrationResponseJson(HttpResponse response, AppProfile expectedData) {
+        expect(response.getContent()).asJson().check(
+                isObject()
+                        .value("name", expectedData.getName())
+                        .value("apikey", isString())
         );
     }
 
@@ -180,6 +239,12 @@ public class FitnessTrackerTest extends SpringTest {
             () -> testRegisterInvalidDev(aliceCopy),
             () -> testPostTracker(records),
             () -> testGetTracker(records),
+            () -> testRegisterApp(alice, demo1),
+            () -> testRegisterApp(alice, demo2),
+            () -> testRegisterInvalidApp(alice, demo1Copy),
+            () -> testRegisterInvalidApp(alice, AppProfileMother.withBadName(null)),
+            () -> testRegisterInvalidApp(alice, AppProfileMother.withBadName(" ")),
+            () -> testRegisterInvalidApp(alice, AppProfileMother.withBadDescription(null)),
             () -> testGetProfile(alice, bob),
             this::reloadServer,
             () -> testGetTracker(records),
