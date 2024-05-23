@@ -85,7 +85,7 @@ class DeveloperService @Autowired constructor(
         if (optionalDeveloper.isPresent) {
             val developer = optionalDeveloper.get()
             val devApps = developer.apps.sortedByDescending { it.timestamp }.map {
-                DeveloperApplication(it.id ?: "", it.name, it.description, it.apiKey)
+                DeveloperApplication(it.id ?: "", it.name, it.description, it.apiKey, it.category)
             }
             return DeveloperResponseDTO(developer.id, developer.email, devApps)
         }

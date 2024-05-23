@@ -26,12 +26,14 @@ public class FitnessTrackerTest extends SpringTest {
     private final String trackerUrl = "/api/tracker";
     private final String signupUrl = "/api/developers/signup";
     private final String registerUrl = "/api/applications/register";
+    private final DataRecord[] records = Stream.generate(DataRecordMother::createRecord).limit(4).toArray(DataRecord[]::new);
     private final DevProfile alice = DevProfileMother.alice();
     private final DevProfile aliceCopy = DevProfileMother.alice();
     private final DevProfile bob = DevProfileMother.bob();
     private final AppProfile demo1 = AppProfileMother.demo1();
     private final AppProfile demo1Copy = AppProfileMother.demo1();
     private final AppProfile demo2 = AppProfileMother.demo2();
+    private final AppProfile basicApp = AppProfileMother.basicApp();
 
     public FitnessTrackerTest() {
         super("../fitness_db.mv.db");
@@ -167,6 +169,39 @@ public class FitnessTrackerTest extends SpringTest {
         return CheckResult.correct();
     }
 
+    CheckResult testRateLimit(DataRecord data, AppProfile appProfile) {
+        HttpRequest getRequest = get(trackerUrl)
+                .addHeader("X-API-Key", appProfile.getApikey());
+        HttpRequest postRequest = post(trackerUrl, gson.toJson(data))
+                .addHeader("X-API-Key", appProfile.getApikey());
+
+        int rejectedRequests = countRejectedRequests(postRequest, getRequest);
+        if (rejectedRequests != 3) {
+            return CheckResult.wrong(
+                    "Too few rejected requests for a basic application within 1 second.\n" +
+                            "Expected 3 responses with the status code 429 but received only %d such responses"
+                                    .formatted(rejectedRequests)
+            );
+        }
+
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            System.out.println("Failed to sleep for 1200 ms");
+        }
+
+        rejectedRequests = countRejectedRequests(postRequest, getRequest);
+        if (rejectedRequests != 3) {
+            return CheckResult.wrong(
+                    "Too few rejected requests for a basic application within 1 second.\n" +
+                            "Expected 3 responses with the status code 429 but received only %d such responses"
+                                    .formatted(rejectedRequests)
+            );
+        }
+
+        return CheckResult.correct();
+    }
+
     private void checkStatusCode(HttpResponse response, int expected) {
         var actual = response.getStatusCode();
         var method = response.getRequest().getMethod();
@@ -230,12 +265,14 @@ public class FitnessTrackerTest extends SpringTest {
                                         .value("name", applications.get(1).getName())
                                         .value("description", applications.get(1).getDescription())
                                         .value("apikey", applications.get(1).getApikey())
+                                        .value("category", applications.get(1).getCategory())
                                 )
                                 .item(isObject()
                                         .value("id", any())
                                         .value("name", applications.get(0).getName())
                                         .value("description", applications.get(0).getDescription())
                                         .value("apikey", applications.get(0).getApikey())
+                                        .value("category", applications.get(0).getCategory())
                                 )
                         )
         );
@@ -246,6 +283,7 @@ public class FitnessTrackerTest extends SpringTest {
                 isObject()
                         .value("name", expectedData.getName())
                         .value("apikey", isString())
+                        .value("category", expectedData.getCategory())
         );
     }
 
@@ -258,10 +296,34 @@ public class FitnessTrackerTest extends SpringTest {
         return CheckResult.correct();
     }
 
-    DataRecord[] records = Stream
-            .generate(DataRecordMother::createRecord)
-            .limit(4)
-            .toArray(DataRecord[]::new);
+    private int countRejectedRequests(HttpRequest... requests) {
+        assert requests.length >= 2;
+
+        int rejectedRequests = 0;
+        var statusCode = requests[0].send().getStatusCode();
+        if (statusCode == 429) {
+            rejectedRequests++;
+        }
+        for (int i = 0; i < 3; i++) {
+            statusCode = requests[1].send().getStatusCode();
+            if (statusCode == 429) {
+                rejectedRequests++;
+            }
+        }
+
+        // retry in case bucket was replenished during the test
+        if (rejectedRequests < 3) {
+            rejectedRequests = 0;
+            for (int i = 0; i < 3; i++) {
+                statusCode = requests[1].send().getStatusCode();
+                if (statusCode == 429) {
+                    rejectedRequests++;
+                }
+            }
+        }
+
+        return rejectedRequests;
+    }
 
     @DynamicTest
     DynamicTesting[] dt = new DynamicTesting[]{
@@ -275,6 +337,7 @@ public class FitnessTrackerTest extends SpringTest {
             () -> testRegisterInvalidDev(aliceCopy),
             () -> testRegisterApp(alice, demo1),
             () -> testRegisterApp(alice, demo2),
+            () -> testRegisterApp(bob, basicApp),
             () -> testRegisterInvalidApp(alice, demo1Copy),
             () -> testRegisterInvalidApp(alice, AppProfileMother.withBadName(null)),
             () -> testRegisterInvalidApp(alice, AppProfileMother.withBadName(" ")),
@@ -290,5 +353,6 @@ public class FitnessTrackerTest extends SpringTest {
             () -> testGetTrackerUnauthenticated(AppProfileMother.withBadApiKey(UUID.randomUUID().toString())),
             this::reloadServer,
             () -> testGetTracker(records, rnd.nextBoolean() ? demo1 : demo2),
+            () -> testRateLimit(DataRecordMother.createRecord(), basicApp),
     };
 }

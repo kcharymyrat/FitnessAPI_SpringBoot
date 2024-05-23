@@ -19,7 +19,7 @@ stages:
     is_completed: true
   - id: 2442
     step: 40047
-    is_completed: false
+    is_completed: true
 topics:
   0:
     - title: Abstract and concrete data structures

@@ -20,6 +20,9 @@ data class App(
     @Column(name = "api_key", nullable = false, unique = true)
     val apiKey: String,
 
+    @Column(nullable = false)
+    val category: String,
+
     @ManyToOne
     @JoinColumn(name = "developer_id")
     var developer: Developer,

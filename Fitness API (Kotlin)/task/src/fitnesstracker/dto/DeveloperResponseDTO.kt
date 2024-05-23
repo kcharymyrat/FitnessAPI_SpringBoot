@@ -11,5 +11,6 @@ data class DeveloperApplication(
     var id: String,
     var name: String,
     var description: String,
-    val apikey: String
+    val apikey: String,
+    val category: String,
 )

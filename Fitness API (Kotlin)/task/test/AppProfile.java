@@ -2,11 +2,13 @@ class AppProfile {
     private String name;
     private String description;
     private String apikey;
+    private String category;
 
     AppProfile(String name, String description) {
         this.name = name;
         this.description = description;
         this.apikey = null;
+        this.category = "premium";
     }
 
     public String getName() {
@@ -33,6 +35,14 @@ class AppProfile {
     public void setApikey(String apikey) {
         this.apikey = apikey;
     }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 }
 
 class AppProfileMother {
@@ -57,6 +67,13 @@ class AppProfileMother {
         var name = "app-" + System.currentTimeMillis();
         var app = new AppProfile(name, "app description");
         app.setApikey(apiKey);
+        return app;
+    }
+
+    public static AppProfile basicApp() {
+        var name = "app-" + System.currentTimeMillis();
+        var app = new AppProfile(name, "app description");
+        app.setCategory("basic");
         return app;
     }
 }

@@ -28,13 +28,16 @@ class AppService @Autowired constructor(
                 name = appRegisterRequestDTO.name.trim(),
                 description = appRegisterRequestDTO.description.trim(),
                 apiKey =  UUID.randomUUID().toString(),
+                category = appRegisterRequestDTO.category,
                 developer = developer
             )
 
             developer.apps.add(app)
             developerService.updateDeveloper(developer)
 
-            return Optional.of(AppRegisterResponseDTO(name = app.name, apikey = app.apiKey))
+            return Optional.of(
+                AppRegisterResponseDTO(name = app.name, apikey = app.apiKey, category = app.category)
+            )
         } catch (e: Exception) {
             return Optional.empty()
         }
