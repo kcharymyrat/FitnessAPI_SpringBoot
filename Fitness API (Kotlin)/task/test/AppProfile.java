@@ -52,4 +52,11 @@ class AppProfileMother {
         var name = "app-" + System.currentTimeMillis();
         return new AppProfile(name, description);
     }
+
+    public static AppProfile withBadApiKey(String apiKey) {
+        var name = "app-" + System.currentTimeMillis();
+        var app = new AppProfile(name, "app description");
+        app.setApikey(apiKey);
+        return app;
+    }
 }

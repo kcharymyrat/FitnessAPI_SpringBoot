@@ -6,12 +6,14 @@ class DataRecord {
     private String activity;
     private int duration;
     private int calories;
+    private String application;
 
     DataRecord(String username, String activity, int duration, int calories) {
         this.username = username;
         this.activity = activity;
         this.duration = duration;
         this.calories = calories;
+        this.application = null;
     }
 
     public String getUsername() {
@@ -44,6 +46,14 @@ class DataRecord {
 
     public void setCalories(int calories) {
         this.calories = calories;
+    }
+
+    public String getApplication() {
+        return application;
+    }
+
+    public void setApplication(String application) {
+        this.application = application;
     }
 }
 

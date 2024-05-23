@@ -5,5 +5,6 @@ data class FitnessTrackerResponseDTO(
     var username: String? = null,
     var activity: String? = null,
     var duration: Int? = null,
-    var calories: Int? = null
+    var calories: Int? = null,
+    var application: String? = null
 )

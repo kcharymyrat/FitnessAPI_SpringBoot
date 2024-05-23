@@ -21,6 +21,72 @@ files:
   - name: test/FitnessTrackerTest.java
     visible: false
     learner_created: false
+  - name: src/fitnesstracker/service/AppService.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/dto/FitnessTrackerResponseDTO.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/controller/TrackerRestController.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/controller/AppRestController.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/dto/AppRegisterResponseDTO.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/security/UserDetailsImpl.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/security/UserDetailsServiceImpl.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/dto/FitnessTrackerRequestDTO.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/security/SecurityConfig.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/dao/DeveloperRepository.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/model/Developer.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/dao/FitnessTrackerRepository.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/service/FitnessTrackerService.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/model/App.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/service/DeveloperService.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/dto/AppRegisterRequestDTO.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/model/FitnessTracker.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/controller/DeveloperRestController.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/dto/DeveloperSignupDTO.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/dto/DeveloperResponseDTO.kt
+    visible: true
+    learner_created: true
+  - name: src/fitnesstracker/dao/AppRepository.kt
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/40046#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Thu, 23 May 2024 12:35:44 UTC"
 record: -1
