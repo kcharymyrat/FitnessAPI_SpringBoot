@@ -5,7 +5,6 @@ import fitnesstracker.dao.FitnessTrackerRepository
 import fitnesstracker.dto.FitnessTrackerRequestDTO
 import fitnesstracker.dto.FitnessTrackerResponseDTO
 import fitnesstracker.model.App
-import fitnesstracker.model.Developer
 import fitnesstracker.model.FitnessTracker
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
@@ -28,28 +27,29 @@ class FitnessTrackerService @Autowired constructor(
         return fitnessTrackerRepository.save(fitnessTracker)
     }
 
-    fun requestDTOToFitnessTracker(requestDTO: FitnessTrackerRequestDTO): FitnessTracker {
+    fun requestDTOToFitnessTracker(requestDTO: FitnessTrackerRequestDTO, appName: String): FitnessTracker {
         return FitnessTracker(
             username = requestDTO.username,
             activity = requestDTO.activity,
             duration = requestDTO.duration,
-            calories = requestDTO.calories
+            calories = requestDTO.calories,
+            application = appName,
         )
     }
 
-    fun fitnessTrackerToResponseDTO(fitnessTracker: FitnessTracker, appName: String?): FitnessTrackerResponseDTO {
+    fun fitnessTrackerToResponseDTO(fitnessTracker: FitnessTracker): FitnessTrackerResponseDTO {
         return FitnessTrackerResponseDTO(
             id = fitnessTracker.id,
             username = fitnessTracker.username,
             activity = fitnessTracker.activity,
             duration = fitnessTracker.duration,
             calories = fitnessTracker.calories,
-            application = appName
+            application = fitnessTracker.application
         )
     }
 
-    fun getAllFitnessTrackerResponseDTOs(appName: String?): List<FitnessTrackerResponseDTO> {
-        return getAllFitnessTrackers().map { fitnessTrackerToResponseDTO(it, appName) }
+    fun getAllFitnessTrackerResponseDTOs(): List<FitnessTrackerResponseDTO> {
+        return getAllFitnessTrackers().map { fitnessTrackerToResponseDTO(it) }
     }
 
     fun validateApiKey(apiKey: String?): Boolean {

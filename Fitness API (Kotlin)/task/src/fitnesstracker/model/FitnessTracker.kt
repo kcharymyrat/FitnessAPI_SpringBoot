@@ -1,6 +1,7 @@
 package fitnesstracker.model
 
 import jakarta.persistence.*
+import java.time.Instant
 
 @Entity
 data class FitnessTracker(
@@ -18,5 +19,8 @@ data class FitnessTracker(
     var duration: Int? = null,
 
     @Column(name = "calories")
-    var calories: Int? = null
+    var calories: Int? = null,
+
+    var application: String,
+    var timestamp: Instant = Instant.now()
 )

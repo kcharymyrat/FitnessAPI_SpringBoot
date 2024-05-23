@@ -40,7 +40,7 @@ class TrackerRestController @Autowired constructor(
         }
 
 
-        val tracker = fitnessTrackerService.requestDTOToFitnessTracker(trackerRequestDTO)
+        val tracker = fitnessTrackerService.requestDTOToFitnessTracker(trackerRequestDTO, app.name)
         val savedTracker = fitnessTrackerService.saveFitnessTracker(tracker)
         return ResponseEntity.status(HttpStatus.CREATED).body(savedTracker)
     }
@@ -65,7 +65,7 @@ class TrackerRestController @Autowired constructor(
             return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build()
         }
 
-        val trackerResponseDTOList = fitnessTrackerService.getAllFitnessTrackerResponseDTOs(app.name)
+        val trackerResponseDTOList = fitnessTrackerService.getAllFitnessTrackerResponseDTOs()
         return ResponseEntity.ok(trackerResponseDTOList)
     }
 
